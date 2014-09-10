@@ -157,6 +157,30 @@
 
 				<section data-markdown>
 			    <script type="text/template">
+			    ## Accented Open Hours block
+			    ![Todays Hours block](images/tisch-ios-home.png)
+					</script>
+				</section>
+
+				<section>
+			    <h2>Accented Open Hours block markup</h2>
+			    <pre><code class="xml">
+<div class="block todays-hours-block ancillary-block ancillary-block--accent">
+  <div class="ancillary-block__wrapper">
+    <h2 class="block__title block-title">Today's Hours</h2>
+    <div class="todays-hours-times">8:00am - 1:00am</div>
+    More hours»
+    <div class="ancillary-block__footer">
+      <div class="ancillary-block__footer-corner"></div>
+      <div class="ancillary-block__footer-spacer"></div>
+    </div>
+  </div>
+</div>
+				  </code></pre>
+				</section>
+
+				<section data-markdown>
+			    <script type="text/template">
 			    <h2>hook_preprocess_block()</h2>
 			    <pre><code>
 function theme_preprocess_block(&$variables, $hook) {
