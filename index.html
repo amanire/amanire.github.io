@@ -94,13 +94,52 @@
 
 					</script>
 				</section>
+
+				<section data-markdown>
+			    <script type="text/template">
+			    ## Open Hours block
+			    ![Todays Hours block](images/tisch-todays-hours.png)
+
+					</script>
+				</section>
+
 				<section>
-			    <h2>Tisch Library ancillary blocks</h2>
+			    <h2>Default block template</h2>
 			    <pre><code class="xml">
-<div class="block block-todays-hours ancillary-block">
+<div id="&lt;?php print $block_html_id; ?>" class="&lt;?php print $classes; ?>"&lt;?php print $attributes; ?>>
+  &lt;h2&lt;?php print $title_attributes; ?>>&lt;?php print $block->subject ?>&lt;/h2>
+  <div class="content"&lt;?php print $content_attributes; ?>>
+    &lt;?php print $content ?>
+  </div>
+</div>
+				  </code></pre>
+				</section>
+
+				<section>
+			    <h2>Open Hours block template</h2>
+			    <p>block--ancillary-block.tpl.php</p>
+			    <pre><code class="xml">
+<div id="&lt;?php print $block_html_id; ?>" class="&lt;?php print $classes; ?>"&lt;?php print $attributes; ?>>
+  <div class="ancillary-block__wrapper">
+    &lt;h2&lt;?php print $title_attributes; ?>>&lt;?php print $title; ?>&lt;/h2>
+    &lt;?php print $content; ?>
+  </div>
+  <div class="ancillary-block__footer">
+    <div class="ancillary-block__footer-corner"></div>
+    <div class="ancillary-block__footer-spacer"></div>
+  </div>
+</div>
+				  </code></pre>
+				</section>
+
+				<section>
+			    <h2>Open Hours block markup</h2>
+			    <pre><code class="xml">
+<div class="block todays-hours-block ancillary-block">
   <div class="ancillary-block__wrapper">
     <h2 class="block__title block-title">Today's Hours</h2>
-    <div class="todays-hours-times">…</div>
+    <div class="todays-hours-times">8:00am - 1:00am</div>
+    More hours»
     <div class="ancillary-block__footer">
       <div class="ancillary-block__footer-corner"></div>
       <div class="ancillary-block__footer-spacer"></div>
@@ -109,6 +148,20 @@
 </div>
 				  </code></pre>
 				</section>
+
+				<section data-markdown>
+			    <script type="text/template">
+			    <h2>hook_preprocess_block()</h2>
+			    <pre><code>
+function theme_preprocess_block(&$variables, $hook) {
+  // if some condition, then
+  $variables['theme_hook_suggestions'][] = 'block__ancillary_block';
+  $variables['classes_array'][] = 'ancillary-block';
+}
+				  </code></pre>
+				  </script>
+				</section>
+
 			</div>
 		</div>
 
