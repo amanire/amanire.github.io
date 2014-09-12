@@ -327,141 +327,143 @@
           </section>
         </section>
 
-        <section data-markdown>
-          <script type="text/template">
-          # Case study
-          ## Block templates
-
-          </script>
-        </section>
-
-        <section data-markdown>
-          <script type="text/template">
-          ## Open Hours block
-          ![Todays Hours block](images/tisch-todays-hours.png)
-          </script>
-        </section>
-
-        <section data-markdown>
-          <script type="text/template">
-          ## Ask A Librarian block
-          ![Todays Hours block](images/tisch-ask-a-librarian.png)
-          </script>
-        </section>
-
-        <section data-markdown>
-          <script type="text/template">
-          ## Home page
-          ![Tisch home page](images/tisch-home.jpg)
-          </script>
-        </section>
-
-        <section data-markdown>
-          <script type="text/template">
-          ## Internal page
-          ![Tisch internal page](images/tisch-more-hours.jpg)
-          </script>
-        </section>
-
         <section>
-          <h2>Default block template</h2>
-          <pre><code class="xml">
-<div id="&lt;?php print $block_html_id; ?>" class="&lt;?php print $classes; ?>"&lt;?php print $attributes; ?>>
-  &lt;h2&lt;?php print $title_attributes; ?>>&lt;?php print $block->subject ?>&lt;/h2>
-  <div class="content"&lt;?php print $content_attributes; ?>>
-    &lt;?php print $content ?>
-  </div>
-</div>
-          </code></pre>
-        </section>
+          <section data-markdown>
+            <script type="text/template">
+            # Case study
+            ## Block templates
 
-        <section data-markdown>
-          <script type="text/template">
-          <h2>hook_preprocess_block()</h2>
-          <pre><code>
-function theme_preprocess_block(&$variables, $hook) {
-  // if some condition, then
-  $variables['theme_hook_suggestions'][] = 'block__ancillary_block';
-  $variables['classes_array'][] = 'ancillary-block';
-}
-          </code></pre>
-          </script>
-        </section>
+            </script>
+          </section>
 
-        <section>
-          <h2>Open Hours block template</h2>
-          <p>block--ancillary-block.tpl.php</p>
-          <pre><code class="xml">
-<div id="&lt;?php print $block_html_id; ?>" class="&lt;?php print $classes; ?>"&lt;?php print $attributes; ?>>
-  <div class="ancillary-block__wrapper">
-    &lt;h2&lt;?php print $title_attributes; ?>>&lt;?php print $title; ?>&lt;/h2>
-    &lt;?php print $content; ?>
-  </div>
-  <div class="ancillary-block__footer">
-    <div class="ancillary-block__footer-corner"></div>
-    <div class="ancillary-block__footer-spacer"></div>
-  </div>
-</div>
-          </code></pre>
-        </section>
+          <section data-markdown>
+            <script type="text/template">
+            ## Open Hours block
+            ![Todays Hours block](images/tisch-todays-hours.png)
+            </script>
+          </section>
 
-        <section>
-          <h2>Open Hours block markup</h2>
-          <pre><code class="xml">
-<div class="block todays-hours-block ancillary-block">
-  <div class="ancillary-block__wrapper">
-    <h2 class="block__title block-title">Today's Hours</h2>
-    <div class="todays-hours-times">8:00am - 1:00am</div>
-    More hours»
+          <section data-markdown>
+            <script type="text/template">
+            ## Ask A Librarian block
+            ![Todays Hours block](images/tisch-ask-a-librarian.png)
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+            ## Home page
+            ![Tisch home page](images/tisch-home.jpg)
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+            ## Internal page
+            ![Tisch internal page](images/tisch-more-hours.jpg)
+            </script>
+          </section>
+
+          <section>
+            <h2>Default block template</h2>
+            <pre><code class="xml">
+  <div id="&lt;?php print $block_html_id; ?>" class="&lt;?php print $classes; ?>"&lt;?php print $attributes; ?>>
+    &lt;h2&lt;?php print $title_attributes; ?>>&lt;?php print $block->subject ?>&lt;/h2>
+    <div class="content"&lt;?php print $content_attributes; ?>>
+      &lt;?php print $content ?>
+    </div>
+  </div>
+            </code></pre>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+            <h2>hook_preprocess_block()</h2>
+            <pre><code>
+  function theme_preprocess_block(&$variables, $hook) {
+    // if some condition, then
+    $variables['theme_hook_suggestions'][] = 'block__ancillary_block';
+    $variables['classes_array'][] = 'ancillary-block';
+  }
+            </code></pre>
+            </script>
+          </section>
+
+          <section>
+            <h2>Open Hours block template</h2>
+            <p>block--ancillary-block.tpl.php</p>
+            <pre><code class="xml">
+  <div id="&lt;?php print $block_html_id; ?>" class="&lt;?php print $classes; ?>"&lt;?php print $attributes; ?>>
+    <div class="ancillary-block__wrapper">
+      &lt;h2&lt;?php print $title_attributes; ?>>&lt;?php print $title; ?>&lt;/h2>
+      &lt;?php print $content; ?>
+    </div>
     <div class="ancillary-block__footer">
       <div class="ancillary-block__footer-corner"></div>
       <div class="ancillary-block__footer-spacer"></div>
     </div>
   </div>
-</div>
-          </code></pre>
-        </section>
+            </code></pre>
+          </section>
 
-        <section>
-          <h2>Open Hours SASS</h2>
-          <pre><code class="sass">
-.ancillary-block {}
-.ancillary-block__wrapper {}
-.ancillary-block__footer-spacer {
-  @include tischBoxShadow;
-  ...
-}
-.ancillary-block__footer-corner {
-  @include ocelotSprite-sprite('transparentGrayCorner');
-  ...
-}
-          </code></pre>
-        </section>
-
-        <section data-markdown>
-          <script type="text/template">
-          ## Accented Open Hours block
-          ![Todays Hours block](images/tisch-ios-home.png)
-          </script>
-        </section>
-
-        <section>
-          <h2>Accented Open Hours block markup</h2>
-          <pre><code class="xml">
-<div class="block todays-hours-block ancillary-block ancillary-block--accent">
-  <div class="ancillary-block__wrapper">
-    <h2 class="block__title block-title">Today's Hours</h2>
-    <div class="todays-hours-times">8:00am - 1:00am</div>
-    More hours»
-    <div class="ancillary-block__footer">
-      <div class="ancillary-block__footer-corner"></div>
-      <div class="ancillary-block__footer-spacer"></div>
+          <section>
+            <h2>Open Hours block markup</h2>
+            <pre><code class="xml">
+  <div class="block todays-hours-block ancillary-block">
+    <div class="ancillary-block__wrapper">
+      <h2 class="block__title block-title">Today's Hours</h2>
+      <div class="todays-hours-times">8:00am - 1:00am</div>
+      More hours»
+      <div class="ancillary-block__footer">
+        <div class="ancillary-block__footer-corner"></div>
+        <div class="ancillary-block__footer-spacer"></div>
+      </div>
     </div>
   </div>
-</div>
-          </code></pre>
-        </section>
+            </code></pre>
+          </section>
 
+          <section>
+            <h2>Open Hours SASS</h2>
+            <pre><code class="sass">
+  .ancillary-block {}
+  .ancillary-block__wrapper {}
+  .ancillary-block__footer-spacer {
+    @include tischBoxShadow;
+    ...
+  }
+  .ancillary-block__footer-corner {
+    @include ocelotSprite-sprite('transparentGrayCorner');
+    ...
+  }
+            </code></pre>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+            ## Accented Open Hours block
+            ![Todays Hours block](images/tisch-ios-home.png)
+            </script>
+          </section>
+
+          <section>
+            <h2>Accented Open Hours block markup</h2>
+            <pre><code class="xml">
+  <div class="block todays-hours-block ancillary-block ancillary-block--accent">
+    <div class="ancillary-block__wrapper">
+      <h2 class="block__title block-title">Today's Hours</h2>
+      <div class="todays-hours-times">8:00am - 1:00am</div>
+      More hours»
+      <div class="ancillary-block__footer">
+        <div class="ancillary-block__footer-corner"></div>
+        <div class="ancillary-block__footer-spacer"></div>
+      </div>
+    </div>
+  </div>
+            </code></pre>
+          </section>
+        </section>
+        
         <section data-markdown>
           <script type="text/template">
           # Display Suite
