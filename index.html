@@ -55,19 +55,27 @@
 
         <section data-markdown>
           <script type="text/template">
-          ## Skills involved
-
-          * CSS, preferably SASS
-          * Site building
-          * Theme functions and templates
-          * Preprocess hooks
+          ## CSS architecture (for Drupal 8)
+          [drupal.org/node/1887918](https://drupal.org/node/1887918)
           </script>
         </section>
 
         <section data-markdown>
           <script type="text/template">
-          ## Drupal 8 CSS architecture
-          [drupal.org/node/1887918](https://drupal.org/node/1887918)
+          # Why?
+
+          Make style rules
+
+          1. Predictable
+          2. Reusable
+          3. Maintainable
+          4. Scalable
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+          ## Drupal 8 CSS architecture origins
 
           * **SMACSS** - Scalable and Modular CSS  
           * **BEM** - Block, Element and Modifier  
@@ -79,15 +87,14 @@
           <section data-markdown>
             <script type="text/template">
             ## SMACSS
-            <blockquote cite="https://austin2014.drupal.org/session/managing-complex-projects-design-components">It&#39;s like Jonathan Snook looked at all the Drupal terms and said, how can I mess with them the most?
-  -- John Albin</blockquote>
+            Scaleable and Modular CSS  
+            [Jonathan Snook](http://snook.ca/)
             </script>
           </section>
 
           <section data-markdown>
             <script type="text/template">
             ## SMACSS
-            By [Jonathan Snook](http://snook.ca/)
 
             1. Base
             2. Layout
@@ -99,8 +106,15 @@
 
           <section data-markdown>
             <script type="text/template">
+            <blockquote cite="https://austin2014.drupal.org/session/managing-complex-projects-design-components">It&#39;s like Jonathan Snook looked at all the Drupal terms and said, how can I mess with them the most?
+  -- John Albin</blockquote>
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
             ## SMACSS - Base Rules
-            ### Base styles and CSS resets
+            Base styles and CSS resets
             <pre><code class="css">
   body, form {
     margin: 0;
@@ -112,6 +126,7 @@
   a:hover {
     color: #03f;
   }
+
             </code></pre>
             </script>
 
@@ -130,12 +145,14 @@
 
           <section data-markdown>
             <script type="text/template">
-            ## SMACSS - Components (Modules)
-            <pre><code class="css">.pod {}
-.pod input[type=text] {}
-.pod-contrained input {}
-.pod-callout {}
-.pod-callout input[type=text] {}
+            ## SMACSS - Modules (Components)
+            <pre><code class="css">
+  .pod {}
+  .pod input[type=text] {}
+  .pod-contrained input {}
+  .pod-callout {}
+  .pod-callout input[type=text] {}
+
 </code></pre>
             </script>
           </section>
@@ -143,7 +160,7 @@
 
         <section data-markdown>
           <script type="text/template">
-          ## BEM
+          ## BEM - Block, Element, Modifier
           [Yandex](http://company.yandex.com/)
           <pre><code class="css">
 .block {}
@@ -158,7 +175,7 @@
 
         <section data-markdown>
           <script type="text/template">
-          ## Object-Oriented CSS
+          ## OOCSS - Object-Oriented CSS
           [Nicole Sullivan](http://www.stubbornella.org)
 
           </script>
@@ -166,7 +183,29 @@
 
         <section data-markdown>
           <script type="text/template">
+          ## Drupal 8 CSS component rules
+          <pre><code class="css">.component-name {}
+.component-name--variant {}
+.component-name__sub-object {}
+.component-name__sub-object--variant {}
+</code></pre>
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
           # Drupal 7
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+          ## Skills involved
+
+          * CSS, preferably SASS
+          * Site building
+          * Theme functions and templates
+          * Preprocess hooks
           </script>
         </section>
 
@@ -181,60 +220,80 @@
           </script>
         </section>
 
-        <section data-markdown>
-          <script type="text/template">
-          ## Contrib modules
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+            ## Contrib modules
 
-          * Panels
-          * Views
-          * Display Suite
-          * Menu Attributes
-          * Block class
-          * [Node class](https://www.drupal.org/project/node_class)
-          * [Field Formatter Class](https://www.drupal.org/project/field_formatter_class)
-          </script>
+            * [Panels](https://drupal.org/project/panels)
+            * [Views](https://drupal.org/project/views)
+            * [Display Suite](https://drupal.org/project/ds)
+            * [Menu Attributes](https://drupal.org/project/menu_attributes)
+            * [Block class](https://drupal.org/project/block_class)
+            * [Node class](https://drupal.org/project/node_class)
+            * [Semantic Fields](https://drupal.org/project/semantic_fields)
+            * [Field Formatter Class](https://drupal.org/project/field_formatter_class)
+            * and more ...
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+            ## Menu Attributes
+            <pre><code class="php">
+    function hook_menu_attribute_info_alter(array &$attributes) {
+      // Remove all attributes except class.
+      unset($attributes['title'], $attributes['id'], $attributes['name'], $attributes['rel'], $attributes['style'], $attributes['target'], $attributes['accesskey']);
+    }
+
+  </code></pre>
+            </script>
+          </section>
+        </section>
+
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+            ## Starter/base themes
+
+            * Zen
+            * Omega
+            * Bastard
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+            ## Zen Theme
+            7.x-6.x-dev  
+            [drupal.org/project/zen](https://drupal.org/project/zen)
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+            ## File structure
+  <pre>
+  components/
+    _button.scss
+    _dialog.scss
+    _footer.scss
+  </pre>
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+            Update Zen&#39;s SMACSS implementation to use Drupal 8 CSS Architecture guide  
+            [drupal.org/node/1931746](https://drupal.org/node/1931746)
+            </script>
+          </section>
         </section>
 
         <section data-markdown>
           <script type="text/template">
-          ## Starter/base themes
-
-          * Zen
-          * Omega
-          * Bastard
-          </script>
-        </section>
-
-        <section data-markdown>
-          <script type="text/template">
-          ## Zen Theme
-          7.x-6.x-dev  
-          [drupal.org/project/zen](https://www.drupal.org/project/zen)
-          </script>
-        </section>
-
-        <section data-markdown>
-          <script type="text/template">
-          ## File structure
-<pre>
-components/
-  _button.scss
-  _dialog.scss
-  _footer.scss
-</pre>
-          </script>
-        </section>
-
-        <section data-markdown>
-          <script type="text/template">
-          Update Zen&#39;s SMACSS implementation to use Drupal 8 CSS Architecture guide  
-          [drupal.org/node/1931746](https://drupal.org/node/1931746)
-          </script>
-        </section>
-
-        <section data-markdown>
-          <script type="text/template">
-          # Block templates
+          # Case study
+          ## Block templates
 
           </script>
         </section>
@@ -327,14 +386,10 @@ function theme_preprocess_block(&$variables, $hook) {
         </section>
 
         <section>
-          <h2>Open Hours CSS</h2>
+          <h2>Open Hours SASS</h2>
           <pre><code class="sass">
-.ancillary-block {
-  ...
-}
-.ancillary-block__wrapper {
-  ...
-}
+.ancillary-block {}
+.ancillary-block__wrapper {}
 .ancillary-block__footer-spacer {
   @include tischBoxShadow;
   ...
@@ -421,10 +476,10 @@ function theme_preprocess_block(&$variables, $hook) {
   </a>
   <div class="auction__info">
     <h2 class="node__title node-title auction__title">
-      <a href="...">Modern Design, Tiffany, Art Nouveau, Decorative Continental Works</a>
+      <a href="...">Fine and Decorative Arts</a>
     </h2>
-    <a href="...">Brunk Auctions</a>
-    <a href="...">Friday, September 12 | 5:00pm EDT</a>
+    <a href="...">Quinn&#39;s Auction Galleries</a>
+    <a href="...">Saturday, September 13 | 11:00am EDT</a>
     <div class="auction__view-catalog--large-teaser">
       <a href="..."><svg class="auction__view-catalog-icon"></svg>View Catalog</a>
     </div>
