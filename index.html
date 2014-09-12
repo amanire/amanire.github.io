@@ -181,15 +181,32 @@
           </script>
         </section>
 
-        <section data-markdown>
-          <script type="text/template">
-          ## Drupal 8 CSS component rules
-          <pre><code class="css">.component-name {}
-.component-name--variant {}
-.component-name__sub-object {}
-.component-name__sub-object--variant {}
-</code></pre>
-          </script>
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+            ## Drupal 8 CSS component rules
+            <pre><code class="css">
+  .component-name {}
+  .component-name--variant {}
+  .component-name__sub-object {}
+  .component-name__sub-object--variant {}
+  </code></pre>
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+            ## BEM module support in SASS 3.3+
+            <pre><code class="css">
+  .component-name {
+    &--variant {}
+    &__sub-object {
+      &--variant {}
+    }
+  }
+  </code></pre>
+            </script>
+          </section>
         </section>
 
         <section data-markdown>
