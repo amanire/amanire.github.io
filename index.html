@@ -55,6 +55,54 @@
 
         <section data-markdown>
           <script type="text/template">
+          ## Spaghetti style rules
+            <pre><code class="css">
+  body.front #footer .footer-right ul.menu li a {
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    color: #e4f2ff;
+    font-size: 1.25em;
+    font-weight: bold;
+    padding-right: auto;
+    padding-top: 13px;
+    padding-bottom: 15px;
+    padding-left: 35px;
+    overflow: hidden;
+  }
+  body.front #footer .footer-right ul.menu li a:hover {
+    color: #fff;
+  }
+
+          </code></pre>
+          </script>
+        </section>
+
+
+        <section data-markdown>
+          <script type="text/template">
+          ## Nesting with CSS Preprocessors 
+
+            <pre><code class="scss">  .bottom-footer-wrapper {
+    padding-top: 80px;
+
+    .block-menu-block {
+      @include box-sizing(border-box);
+
+      .block__title {
+
+        a:link, a:visited {
+          color: $footer-link-grey;
+        }
+      }
+    }
+  }
+          </code></pre>
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
           ## CSS architecture (for Drupal 8)
           [drupal.org/node/1887918](https://drupal.org/node/1887918)
           </script>
