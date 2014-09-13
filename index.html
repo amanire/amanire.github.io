@@ -618,6 +618,30 @@
     </div>
   </div></code></pre>
           </section>
+
+          <section>
+            <h3>Auction teaser SASS</h3>
+            <pre><code class="scss">
+.auction {
+  position: relative;
+}
+.auction__badge {
+  @include border-radius(10px 0 0 0);
+}
+.auction__title {
+  font-size: 1.17 * $base-font-size;
+  line-height: normal;
+}
+.auction__view-catalog-icon {
+  fill: $link-gray;
+  margin-right: 0.2em;
+}
+.auction__info {
+  padding: $zen-gutter-width;
+}
+            </code></pre>
+          </section>
+        </section>
         </section>
 
         <section data-markdown>
