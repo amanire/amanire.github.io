@@ -25,60 +25,72 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h1>SVG, Easy as 1-2-3</h1>
+					<h1 id="title">SVG</h1>
+          <img id="subtitle" alt="Easy as 1-2-3" src="images/easy-as-123.png" style="background:none;
+  border:0; box-shadow:none;"/>
 					<p>Aaron Manire</p>
+          <p><small><a href="http://amanire.github.io/svg-123">amanire.github.io/svg-123</a></small></p>
 				</section>
 				<section>
 					<h2>What is SVG?</h2>
 				</section>
-				<section data-state="sprinkle-water" data-transition="none">
+				<section data-state="sprinkle-water" data-transition="none" data-autoslide="4000">
 					<h2>Bitmap/Raster images</h2>
 					<img class="mushroom mushroom--png" style="position:relative; top:160px; background:none; border:0;" src="images/mushroom-16x16.png"/>
 					<div style="height:304px;"></div>
 				</section>
-				<section data-transition="none">
+				<section data-transition="none" data-autoslide="3000">
 					<h2>Bitmap/Raster images</h2>
 					<img class="mushroom" style="margin-bottom:0;" src="images/mushroom-320x320.png"/><br/>
-					<img style="height:300px; width:300px; border:0; background:none; margin-top:0;" class="fragment fade-up" src="images/mario-jump.png"/>
+					<img style="height:300px; width:300px; border:0; background:none; margin-top:0;" class="fragment fade-up" src="images/mario-jump.png" data-autoslide="false"/>
 				</section>
 				<section data-state="sprinkle-water">
 					<h2>Structured Vector Graphics</h2>
 					<svg class="mushroom--svg" style="height:16px; width:14.2px; position:relative; top:160px; background:none; border:0;" xmlns="http://www.w3.org/2000/svg" width="274px" height="243.4px" viewBox="0 0 274 243.4"> 
-						<path fill="#ED1F24" stroke="#000000" stroke-width="10" stroke-miterlimit="10" d="M5,137C5,137,5,5,137,5s132,132,132,132H5z"/>
-						<rect x="86.4" y="137" fill="#FFFFFF" stroke="#000000" stroke-width="10" stroke-miterlimit="10" width="101.4" height="101.4"/>
+						<path fill="#ED1F24" stroke="#000" stroke-width="10" stroke-miterlimit="10" d="M5,137C5,137,5,5,137,5s132,132,132,132H5z"/>
+						<rect x="86.4" y="137" fill="#FFF" stroke="#000" stroke-width="10" stroke-miterlimit="10" width="101.4" height="101.4"/>
 					</svg>
 					<div style="height:304px;"></div>
 				</section>
-				<section data-background-video="videos/tempest.mp4" data-background-color="#000000" data-background-video-loop="true" data-background-video-muted="true">
+				<section data-background-video="videos/tempest.mp4" data-background-color="#000" data-background-video-loop="true" data-background-video-muted="true">
+			    <aside class="notes">How many of you remember this game? It was to be the successor to Space Invaders. (Tempest)</aside>
 				</section>
-				<section data-background-video="videos/asteroids.mp4" data-background-color="#000000" data-background-video-loop="true" data-background-video-muted="true">
+				<section data-background-video="videos/asteroids.mp4" data-background-color="#000" data-background-video-loop="true" data-background-video-muted="true">
+			    <aside class="notes">How about this one?<br/>The date? That's 1979!</aside>
 				</section>
 				<section>
 					<h2>A Brief History</h2>
 					<ul style="list-style:none;">
 					  <li><span class="list-date">1998</span> SVG Working group starts development</li>
-					  <li><span class="list-date">2001</span> SVG 1.0 released</li>
-					  <li><span class="list-date">2003</span> SVG 1.1 released</li>
-					  <li><span class="list-date">2011</span> Support added to Internet Explorer (IE9)</li>
+					  <li class="fragment"><span class="list-date">2001</span> SVG 1.0 released</li>
+					  <li class="fragment"><span class="list-date">2003</span> SVG 1.1 released</li>
+            <li class="fragment"><span class="list-date">2010</span> Steve Jobs publishes <em>Thoughts on Flash</em></li>
+					  <li class="fragment"><span class="list-date">2011</span> SVG support added to Internet Explorer (IE9)</li>
+					  <li class="fragment"><span class="list-date">2016</span> SVG 2.0 candidate recommendation</li>
 					</ul>
 					<p><small><a href="http://caniuse.com/#feat=svg">caniuse.com/#feat=svg</a></small></p>
 				</section>
 				<section>
 					<h2>Why use SVG?</h2>
 					<ul>
-					  <li>Smaller file size</li>
 					  <li>Scale without pixelation</li>
-					  <li>End-user can interact and change</li>
-					  <li>Easy to maintain</li>
-					  <li>DOM available to JavaScript</li>
-					  <li>Accessible</li>
-					  <li>Translatable</li>
-					  <li>Searchable (SEO)</li>
+            <li class="fragment">Smaller file size</li>
+					  <li class="fragment">End-user can interact and change</li>
+					  <li class="fragment">Easy to maintain</li>
+					  <li class="fragment">DOM available to JavaScript</li>
+					  <li class="fragment">Accessible</li>
+					  <li class="fragment">Translatable</li>
+					  <li class="fragment">Searchable (SEO)</li>
 					</ul>
 				</section>
 				<section>
-					<h2>Icon Fonts</h2>
-					<p><small><a href="https://css-tricks.com/icon-fonts-vs-svg/">css-tricks.com/icon-fonts-vs-svg/</a></small></p>
+					<h2>SVG instead of Icon Fonts</h2>
+					<ul>
+					  <li>More flexible, e.g. multiple colors</li>
+					  <li>Easier to size and position</li>
+					  <li>Less work to maintain</li>
+					  <li>See <em>Inline SVG vs Icon Fonts [CAGEMATCH]</em><br/><a href="https://css-tricks.com/icon-fonts-vs-svg/">css-tricks.com/icon-fonts-vs-svg/</a></li>
+					</ul>
 				</section>
 				<section>
 					<h2>When not to use SVG?</h2>
@@ -92,73 +104,134 @@
 					<section>
 					<h2>Anatomy of an SVG</h2>
 				</section>
-					<section>
+					<section data-transition="fade-in fade-out">
 						<h3>SVG element</h3>
-						<pre><code class="hljs" data-trim>
+						<pre><code class="xml" data-trim>
 &lt;svg&gt;
 &lt;/svg&gt;
 						</code></pre>
 					</section>
-					<section>
+					<section data-transition="fade-in fade-out">
 						<h3>SVG XML Name Space</h3>
-						<pre><code class="hljs" data-trim>
-&lt;svg xmlns="http://www.w3.org/2000/svg"&gt;
+						<pre><code class="xml" data-trim data-noescape>
+&lt;svg <mark>xmlns="http://www.w3.org/2000/svg"</mark>&gt;
 &lt;/svg&gt;
 						</code></pre>
 					<p class="fragment"><small>Note: Unnecessary for inline SVG inside HTML5 doctype</small></p>
 					</section>
-					<section>
+					<section data-transition="fade-in fade-out">
 					<h3>Viewbox</h3>
-						<pre><code class="hljs" data-trim>
-&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 274 244"&gt;
+						<pre><code class="xml" data-trim data-noescape>
+&lt;svg xmlns="http://www.w3.org/2000/svg" <mark>viewBox="0 0 274 244"</mark>&gt;
 &lt;/svg&gt;
-						</code></pre>
+						</code class="xml" ></pre>
 					<p><small><a href="https://sarasoueidan.com/blog/svg-coordinate-systems/">sarasoueidan.com/blog/svg-coordinate-systems</a></small></p>
+          <p class="fragment">Animating the viewBox<br/><small><a href="http://codepen.io/Mamboleoo/post/animating-the-viewbox">codepen.io/Mamboleoo/post/animating-the-viewbox</a></small></p>
 				</section>
-				<section>
+				<section data-transition="fade-in fade-out">
 						<h3>Presentation attributes</h3>
-						<pre><code class="hljs" data-trim>
+						<pre><code class="xml" data-trim data-noescape>
 &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 274 244"
-width="274px" height="244px"&gt;
+  <mark>width="274px" height="244px"</mark>&gt;
 &lt;/svg&gt;
 						</code></pre>
 					</section>
-					<section>
+					<section data-transition="fade-in fade-out">
 						<h3>Shape Elements</h3>
-						<pre><code class="hljs" data-trim>
+						<pre><code class="xml" data-trim data-noescape>
+&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 274 244"
+width="274px" height="244px"&gt;
+  <mark>&lt;path d="M5,137C5,137,5,5,137,5s132,132,132,132H5z"/&gt;</mark>
+  <mark>&lt;rect width="101.4" height="101.4"/&gt;</mark>
+&lt;/svg&gt;
+						</code></pre>
+					</section>
+					<section data-transition="fade-in fade-out">
+						<h3>Text Elements</h3>
+						<pre><code class="xml" data-trim data-noescape>
 &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 274 244"
 width="274px" height="244px"&gt;
   &lt;path d="M5,137C5,137,5,5,137,5s132,132,132,132H5z"/&gt;
   &lt;rect width="101.4" height="101.4"/&gt;
+  <mark>&lt;text&gt;Russula&lt;text&gt;</mark>
 &lt;/svg&gt;
 						</code></pre>
 					</section>
-					<section>
-						<h3>More presentation attributes</h3>
-						<pre><code class="hljs" data-trim>
+					<section data-transition="fade-in fade-out">
+						<h3>Group Tag</h3>
+						<pre><code class="xml" data-trim data-noescape>
 &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 274 244"
 width="274px" height="244px"&gt;
-  &lt;path fill="#ED1F24" stroke="#000000" stroke-width="10" stroke-miterlimit="10" d="M5,137C5,137,5,5,137,5s132,132,132,132H5z"/&gt;
-  &lt;rect fill="#FFFFFF" stroke="#000000" width="101.4" height="101.4"/&gt;
+  <mark>&lt;g&gt;</mark>
+    &lt;path d="M5,137C5,137,5,5,137,5s132,132,132,132H5z"/&gt;
+    &lt;rect width="101.4" height="101.4"/&gt;
+    &lt;text&gt;Russula&lt;text&gt;
+  <mark>&lt;/g&gt;</mark>
 &lt;/svg&gt;
 						</code></pre>
-					<svg class="fragment" style="background:none; border:0;" xmlns="http://www.w3.org/2000/svg" width="274px" height="244px" viewBox="0 0 274 244"> 
-						<path fill="#ED1F24" stroke="#000000" stroke-width="10" stroke-miterlimit="10" d="M5,137C5,137,5,5,137,5s132,132,132,132H5z"/>
-						<rect x="86.4" y="137" fill="#FFFFFF" stroke="#000000" stroke-width="10" stroke-miterlimit="10" width="101.4" height="101.4"/>
+					</section>
+					<section data-transition="fade-in fade-out">
+						<h3>More presentation attributes</h3>
+						<pre><code class="xml" data-trim data-noescape>
+&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 274 244"
+width="274px" height="244px"&gt;
+  &lt;g&gt;
+    &lt;path <mark>fill="#ED1F24" stroke="#000" stroke-width="10" stroke-miterlimit="10"</mark> d="M5,137C5,137,5,5,137,5s132,132,132,132H5z"/&gt;
+    &lt;rect <mark>fill="#FFF" stroke="#000"</mark> width="101.4" height="101.4"/&gt;
+    &lt;text <mark>x="60" y="96" text-anchor="middle" font-size="48"</mark>&gt;
+      Russula
+    &lt;text&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;
+						</code></pre>
+					</section>
+					<section data-transition="fade-in fade-out">
+						<h3>More presentation attributes</h3>
+						<pre><code class="xml" data-trim data-noescape>
+&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 274 244"
+width="274px" height="244px"&gt;
+  &lt;g&gt;
+    &lt;path <mark>fill="#ED1F24" stroke="#000" stroke-width="10" stroke-miterlimit="10"</mark> d="M5,137C5,137,5,5,137,5s132,132,132,132H5z"/&gt;
+    &lt;rect <mark>fill="#FFF" stroke="#000"</mark> width="101.4" height="101.4"/&gt;
+    &lt;text <mark>x="60" y="96" text-anchor="middle" font-size="48"</mark>&gt;
+      Russula
+    &lt;text&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;
+						</code></pre>
+					<svg style="background:none; border:0;" xmlns="http://www.w3.org/2000/svg" width="274px" height="244px" viewBox="0 0 274 244"> 
+            <g>
+  						<path fill="#ED1F24" stroke="#000" stroke-width="10" stroke-miterlimit="10" d="M5,137C5,137,5,5,137,5s132,132,132,132H5z"/>
+  						<rect x="86.4" y="137" fill="#FFF" stroke="#000" stroke-width="10" stroke-miterlimit="10" width="101.4" height="101.4"/>
+  					  <text x="138" y="96" text-anchor="middle" font-size="48">
+  					    Russula
+  					  </text>
+            </g>
 					</svg>
 					</section>
-					<section>
-						<h3>CSS Classes, inline styles, IDs</h3>
-						<pre><code class="hljs" data-trim>
-&lt;svg id="mushroom" class="mushroom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 274 244"
+					<section data-transition="fade-in fade-out">
+						<h3>CSS Classes and inline styles</h3>
+						<pre><code class="xml" data-trim data-noescape>
+&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 274 244"
 width="274px" height="244px"&gt;
-  &lt;path class="mushroom__cap" style="fill:#0f0;" d="M5,137C5,137,5,5,137,5s132,132,132,132H5z"/&gt;
-  &lt;rect class="mushroom__stalk" fill="#FFFFFF" stroke="#000000" stroke-width="10" stroke-miterlimit="10" width="101.4" height="101.4"/&gt;
+  &lt;g <mark>id="mushroom" class="mushroom"</mark>&gt;
+    &lt;path <mark>class="mushroom__cap"</mark> d="M5,137C5,137,5,5,137,5s132,132,132,132H5z"/&gt;
+    &lt;rect <mark>class="mushroom__stem"</mark> fill="#FFF" stroke="#000" stroke-width="10" stroke-miterlimit="10" width="101.4" height="101.4"/&gt;
+  &lt;/g&gt; 
 &lt;/svg&gt;
 						</code></pre>
-					<svg id="mushroom" class="fragment" style="background:none; border:0;" xmlns="http://www.w3.org/2000/svg" width="274px" height="244px" viewBox="0 0 274 244"> 
-						<path class="mushroom__cap"  style="fill:#0f0;" fill="#ED1F24" stroke="#000000" stroke-width="10" stroke-miterlimit="10" d="M5,137C5,137,5,5,137,5s132,132,132,132H5z"/>
-						<rect class="mushroom__stalk" x="86.4" y="137" fill="#FFFFFF" stroke="#000000" stroke-width="10" stroke-miterlimit="10" width="101.4" height="101.4"/>
+						<pre><code class="css" data-trim>
+.mushroom__cap {
+  fill: green;
+  stroke: black;
+  stroke-width: 10;
+}
+						</code></pre>
+					<svg xmlns="http://www.w3.org/2000/svg" width="274px" height="244px" viewBox="0 0 274 244"> 
+            <g id="mushroom" style="background:none; border:0;">
+  						<path class="mushroom__cap" d="M5,137C5,137,5,5,137,5s132,132,132,132H5z"/>
+  						<rect class="mushroom__stem" x="86.4" y="137" fill="#FFF" stroke="#000" stroke-width="10" stroke-miterlimit="10" width="101.4" height="101.4"/>
+            </g> 
 					</svg>
 					</section>
 				</section>
@@ -172,7 +245,7 @@ width="274px" height="244px"&gt;
 					</section>
 					<section>
 					  <h3>Sketch</h3>
-					  <p>Mac OS X only</p>
+					  <p>Mac OS only</p>
 					</section>
 					<section>
 					  <h3>Inkscape</h3>
@@ -184,9 +257,16 @@ width="274px" height="244px"&gt;
 					</section>
 					<section>
 					  <h3>Figma</h3>
-					  <p>Collaborative editing like Google Docs.<br/>Currently in beta preview</p>
+					  <p>Collaborative workflow like Google Docs.</p>
+					  <p><small>1.0.0 general public release</small></p>
 					  <p><small><a href="https://www.figma.com/">figma.com</a></small></p>
 					</section>
+          <section>
+            <h3>Omnigraffle</h3>
+            <p>Mac OS only<br/>
+            Omnigraffle 7 introduces SVG imports</p>
+            <p><small><a href="https://www.omnigroup.com/omnigraffle/preview/">omnigroup.com/omnigraffle/preview/</a></small></p>
+          </section>
 				</section>
 				<section>
 					<section>
@@ -208,11 +288,7 @@ width="274px" height="244px"&gt;
 						<ul>
 						  <li>&lt;object&gt;</li>
 						  <li>&lt;img&gt;</li>
-						  <li>CSS background-image<ul>
-						    <li>External file</li>
-						    <li>data URI</li>
-						    </ul>
-						  </li>
+						  <li>CSS background-image</li>
 						  <li>&lt;iframe&gt;</li>
 						  <li>&lt;embed&gt;</li>
 						  <li>inline &lt;svg&gt;</li>
@@ -224,11 +300,7 @@ width="274px" height="244px"&gt;
 						<ul>
 						  <li style="color:#666;">&lt;object&gt;</li>
 						  <li>&lt;img&gt;</li>
-						  <li>CSS background-image<ul>
-						    <li>External file</li>
-						    <li>data URI</li>
-						    </ul>
-						  </li>
+						  <li>CSS background-image</li>
 						  <li style="color:#666;">&lt;iframe&gt;</li>
 						  <li style="color:#666;">&lt;embed&gt;</li>
 						  <li>inline &lt;svg&gt;</li>
@@ -237,7 +309,7 @@ width="274px" height="244px"&gt;
 					</section>
 					<section>
 						<h3>&lt;img&gt;</h3>
-						<pre><code class="hljs" data-trim>
+						<pre><code class="html" data-trim>
 &lt;img src="filename.svg" alt=""/&gt;
 						</code></pre>
 						<ul>
@@ -248,21 +320,12 @@ width="274px" height="244px"&gt;
 					</section>
 					<section>
 						<h3>CSS Background image</h3>
-						<h4>External file</h4>
-						<pre><code class="hljs" data-trim>
+						<pre><code class="css" data-trim>
 .toolbar-icon-help-main:before {
   background-image: url(images/questionmark-disc.svg);
 }
 						</code></pre>
-					</section>
-					<section>
-						<h3>CSS Background image</h3>
-						<h4>Data URI</h4>
-						<pre><code class="hljs" data-trim>
-background-image: url('data:image/svg+xml;utf8,
-&lt;svg%20width="170mm"%20height="170mm"%20xmlns="http://www.w3.org/2000/svg"&gt;&lt;g&gt;&lt;text%20transform="rotate(-45%20324.7626037597656,238.86323547363284)"%20font-weight="bold"%20text-anchor="middle"%20font-family="Sans-serif"%20font-size="63"%20y="259.28"%20x="328.18"%20%20fill="%23DDD"&gt;%C3%89SVG SVG SVG SVG SVG SVG&lt;/text&gt;&lt;/g&gt;&lt;/svg&gt;');
-						</code></pre>
-						<p><small><a href="https://css-tricks.com/probably-dont-base64-svg/">css-tricks.com/probably-dont-base64-svg/</a></small>
+            <img style="max-height:258px;max-width:920px;" src="images/drupal-toolbar-help-icon.png"/>
 					</section>
 					<section>
 						<h3>Inline &lt;svg&gt;</h3>
@@ -275,13 +338,113 @@ background-image: url('data:image/svg+xml;utf8,
 						<p><small><a href="http://calendar.perfplanet.com/2011/why-inlining-everything-is-not-the-answer/">calendar.perfplanet.com/2011/why-inlining-everything-is-not-the-answer/</a></small></p>
 					</section>
 				</section>
+        <section>
+          <section>
+            <h2>SVG Image Sprites</h2>
+          </section>
+          <section>
+            <h3>Defs tag</h3>
+            <pre><code class="xml" data-trim data-noescape>
+&lt;svg&gt;
+  <mark>&lt;defs&gt;</mark>
+    &lt;g id="mushroom--amanita"&gt;
+      &lt;path fill="#ED1F24" stroke="#000" stroke-width="10" d="M5,137C5,137,5,5,137,5s132,132,132,132H5z"/&gt;
+      &lt;rect x="86.4" y="137" fill="#FFF" stroke="#000" width="101.4" height="101.4"/&gt;
+      &lt;circle cx="80" cy="90" r="10" fill="#FFF"/&gt;
+      &lt;circle cx="160" cy="60" r="20" fill="#FFF"/&gt;
+    &lt;/g&gt;
+  <mark>&lt;/defs&gt;</mark>
+&lt;/svg&gt;
+            </code></pre>
+<svg>
+  <defs>
+    <g id="mushroom--amanita">
+      <path fill="#ED1F24" stroke="#000" stroke-width="10" stroke-miterlimit="10" d="M5,137C5,137,5,5,137,5s132,132,132,132H5z"/>
+      <rect x="86.4" y="137" fill="#FFF" stroke="#000" stroke-width="10" stroke-miterlimit="10"  width="101.4" height="101.4"/>
+      <circle cx="80" cy="90" r="10" fill="#FFF"/>
+      <circle cx="160" cy="60" r="20" fill="#FFF"/>
+    </g>
+  </defs>
+</svg>
+          </section>
+          <section>
+            <h3>Use element</h3>
+            <pre><code class="xml" data-trim data-noescape>
+&lt;svg viewBox="0 0 274 244&gt;
+  <mark>&lt;use x="100" y="100" xlink:href="#mushroom--amanita"/&gt;</mark>
+&lt;/svg&gt;
+            </code></pre>
+<svg width="274px" height="244px" viewBox="0 0 274 244">
+  <use x="0" y="0" xlink:href="#mushroom--amanita"/>
+</svg>
+          </section>
+          <section>
+            <h3>Symbol element</h3>
+            <pre><code class="xml" data-trim data-noescape>
+&lt;svg&gt;
+  <mark>&lt;symbol id="mushroom--psilocybe" viewBox="0 0 274 244"&gt;</mark>
+    &lt;path fill="#6d7AA7" stroke="#000" stroke-width="10" d="M5,137C5,137,5,5,137,5s132,132,132,132H5z"/&gt;
+    &lt;rect x="86.4" y="137" fill="#FFF" stroke="#000" width="101.4" height="101.4"/&gt;
+  <mark>&lt;/symbol&gt;</mark>
+&lt;/svg&gt;
+            </code></pre>
+            <p><small><a href="https://sarasoueidan.com/blog/structuring-grouping-referencing-in-svg/">sarasoueidan.com/blog/structuring-grouping-referencing-in-svg/</a></small></p>
+<svg>
+  <symbol id="mushroom--psilocybe" viewBox="0 0 274 244">
+    <path fill="#6d7AA7" stroke="#000" stroke-width="10" d="M5,137C5,137,5,5,137,5s132,132,132,132H5z"/>
+    <rect x="86.4" y="137" fill="#FFF" stroke="#000" stroke-width="10" stroke-miterlimit="10" width="101.4" height="101.4"/>
+  </symbol>
+</svg>
+          </section>
+          <section>
+            <h3>Using a &lt;symbol&gt;</h3>
+            <pre><code class="xml" data-trim data-noescape>
+&lt;svg&gt;
+  <mark>&lt;use xlink:href="#mushroom--psilocybe"/&gt;</mark>
+&lt;/svg&gt;
+            </code></pre>
+<svg>
+  <use xlink:href="#mushroom--psilocybe"/>
+</svg>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>SVG Text Sprites</h2>
+          </section>
+          <section>
+            <h3>CSS Background image</h3>
+            <h4>Data URI</h4>
+            <pre><code class="css" data-trim>
+.mushroom--angry {
+  background-image: url('data:image/svg+xml;utf8,
+&lt;svg%20width="170mm"%20height="170mm"%20xmlns="http://www.w3.org/2000/svg"&gt;&lt;g&gt;&lt;text%20transform="rotate(-45%20324.7626037597656,238.86323547363284)"%20font-weight="bold"%20text-anchor="middle"%20font-family="Sans-serif"%20font-size="63"%20y="259.28"%20x="328.18"%20%20fill="%23DDD"&gt;%C3%89SVG SVG SVG SVG SVG SVG&lt;/text&gt;&lt;/g&gt;&lt;/svg&gt;');
+}
+.mushroom--happy {
+  background-image: url('data:image/svg+xml;utf8,
+&lt;svg%20width="170mm"%20height="170mm"%20xmlns="http://www.w3.org/2000/svg"&gt;&lt;g&gt;&lt;text%20transform="rotate(-45%20324.7626037597656,238.86323547363284)"%20font-weight="bold"%20text-anchor="middle"%20font-family="Sans-serif"%20font-size="63"%20y="259.28"%20x="328.18"%20%20fill="%23DDD"&gt;%C3%89SVG SVG SVG SVG SVG SVG&lt;/text&gt;&lt;/g&gt;&lt;/svg&gt;');
+}
+            </code></pre>
+            <p><small><a href="https://css-tricks.com/probably-dont-base64-svg/">css-tricks.com/probably-dont-base64-svg/</a></small>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>Grumpicon</h3>
+            <a href="http://www.grumpicon.com/">grumpicon.com</a>
+          </section>
+          <section>
+            <h3>Grunticon</h3>
+            <a href="https://github.com/filamentgroup/grunticon">github.com/filamentgroup/grunticon</a>
+          </section>
+        </section>
 				<section>
 					<h2>Fallbacks for non-SVG browsers</h2>
 					<p><small><a href="https://css-tricks.com/a-complete-guide-to-svg-fallbacks/">css-tricks.com/a-complete-guide-to-svg-fallbacks/</a></small></p>
 				</section>
 				<section>
 					<h2>Dealing with FOUSVG</h2>
-					<p>Use height/width presentation attributes to eliminate the flash of Unstyled SVG</p>
+					<p>Use height/width presentation attributes to eliminate the Flash of Unstyled SVG</p>
 					<p><small><a href="https://sarasoueidan.com/blog/svg-style-inheritance-and-FOUSVG/">sarasoueidan.com/blog/svg-style-inheritance-and-FOUSVG/</a></small></p>
 				</section>
 				<section>
@@ -296,7 +459,9 @@ background-image: url('data:image/svg+xml;utf8,
 					</section>
 					<section>
 						<h2>Inline SVG in twig templates</h2>
-						<code>{% include active_theme_path() ~ '/images/filename.svg' %}</code>
+						<pre><code class="twig" data-trim data-noescape>
+{% include active_theme_path() ~ '/images/filename.svg' %}
+            </code></pre>
 					</section>
 					<section>
 						<h2>SVG image fields in Drupal 7</h2>
@@ -305,28 +470,23 @@ background-image: url('data:image/svg+xml;utf8,
 					</section>
 					<section>
 						<h2>SVG image fields in Drupal 8</h2>
-						<p>Ability to upload SVG to image fields is coming to core in Drupal 8.2!<br/>
+						<p>Ability to upload SVG to image fields is coming to core*<br/> in Drupal <strike>8.2</strike> 8.3.<br/>
 						<a href="https://www.drupal.org/node/2652138">d.o/node/2652138</a></p>
+						<p>* Requires ImageMagick toolkit</p>
 					</section>
 				</section>
 				<section>
-				  <h2>Security</h2>
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125" height=50vh>
-						<path d="M91,39.5V23c0-3.5-2.2-6-5.8-6.4c-0.6-0.1-1.1-0.1-1.7-0.2c-2.3-0.3-4.4-0.5-6.4-1c-7.5-1.7-14.7-5-22.7-10.6  C53.2,3.8,51.9,3,50.1,3c-1.9,0-3.1,0.9-4.4,1.7C35,12.1,25.4,15.8,15.4,16.4C12.5,16.5,9,17.8,9,23.2c0,3.3,0,6.6,0,9.9  c0,6.5,0,13.3,0,20c0,2.6,0.3,5.4,1,8.4c1.5,6.6,4.9,12.6,10.6,18.3c7,7.1,15.8,12.6,27,16.8c0.1,0,0.1,0,0.2,0.1  c0.7,0.2,1.5,0.4,2.2,0.4h0c1,0,2-0.2,2.9-0.6c0.9-0.4,1.8-0.8,2.8-1.2c2.3-1,4.8-2.1,7.2-3.3c8.9-4.7,15.7-10.3,20.8-17.2  c4.5-5.9,6.9-12.2,7.2-18.8c0.2-4.4,0.2-8.9,0.2-13.3C91,41.6,91,40.6,91,39.5z M81.9,55.6c-0.2,4.8-2,9.3-5.4,13.8  c-4.3,5.8-10.1,10.6-17.7,14.6c-2.2,1.1-4.5,2.1-6.7,3c-0.7,0.3-1.4,0.6-2.1,0.9c-9.5-3.7-17-8.4-22.9-14.3c-4.5-4.6-7.1-9.1-8.3-14  C18.2,57.1,18,55,18,53c-0.1-6.6,0-13.4,0-19.9c0-2.6,0-5.3,0-7.9c10.7-1,21-5.1,32.1-12.6c8.7,6,16.7,9.6,25.1,11.5  c2.3,0.5,4.7,0.8,6.9,1.1v14.3c0,1.1,0,2.2,0,3.3C82.1,47,82.1,51.3,81.9,55.6z M55,68.6c0.1,2.7-2.3,5-5,5c-2.8,0-5.1-2.3-5.1-5.1  s2.3-5.1,5.1-5.1C52.8,63.4,55.2,65.7,55,68.6z M54.7,30.5c0.3,0.8,0.5,1.6,0.5,2.5c-0.1,2.5-0.3,5.1-0.5,7.6  c-0.2,3.9-0.5,7.9-0.7,11.8c-0.1,1.3-0.1,2.4-0.1,3.7c-0.1,2.1-1.7,3.7-3.8,3.7s-3.7-1.5-3.8-3.6c-0.3-6.1-0.7-12.2-1-18.3  c-0.1-1.6-0.2-3.2-0.3-4.9c0-2.7,1.5-4.9,3.9-5.6C51.2,27,53.7,28.2,54.7,30.5z" fill="orange"/></svg>
-			  </section>
-				<section>
-				  <section>
-						<h2>SVG Sprites</h2>
+					<section>
+				    <blockquote>"The security aspect of cyber is very, very tough. And maybe it's hardly doable."</blockquote>
+				    <p><small>— Donald Trump</small></p>
 				  </section>
 					<section>
-					  <h3>Grunticon</h3>
-					  <a href="https://github.com/filamentgroup/grunticon">github.com/filamentgroup/grunticon</a>
-					</section>
-					<section>
-					  <h3>Grumpicon</h3>
-					  <a href="http://www.grumpicon.com/">grumpicon.com</a>
-					</section>
-				</section>
+					  <h2>Security</h2>
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125" height=50vh>
+							<path d="M91,39.5V23c0-3.5-2.2-6-5.8-6.4c-0.6-0.1-1.1-0.1-1.7-0.2c-2.3-0.3-4.4-0.5-6.4-1c-7.5-1.7-14.7-5-22.7-10.6  C53.2,3.8,51.9,3,50.1,3c-1.9,0-3.1,0.9-4.4,1.7C35,12.1,25.4,15.8,15.4,16.4C12.5,16.5,9,17.8,9,23.2c0,3.3,0,6.6,0,9.9  c0,6.5,0,13.3,0,20c0,2.6,0.3,5.4,1,8.4c1.5,6.6,4.9,12.6,10.6,18.3c7,7.1,15.8,12.6,27,16.8c0.1,0,0.1,0,0.2,0.1  c0.7,0.2,1.5,0.4,2.2,0.4h0c1,0,2-0.2,2.9-0.6c0.9-0.4,1.8-0.8,2.8-1.2c2.3-1,4.8-2.1,7.2-3.3c8.9-4.7,15.7-10.3,20.8-17.2  c4.5-5.9,6.9-12.2,7.2-18.8c0.2-4.4,0.2-8.9,0.2-13.3C91,41.6,91,40.6,91,39.5z M81.9,55.6c-0.2,4.8-2,9.3-5.4,13.8  c-4.3,5.8-10.1,10.6-17.7,14.6c-2.2,1.1-4.5,2.1-6.7,3c-0.7,0.3-1.4,0.6-2.1,0.9c-9.5-3.7-17-8.4-22.9-14.3c-4.5-4.6-7.1-9.1-8.3-14  C18.2,57.1,18,55,18,53c-0.1-6.6,0-13.4,0-19.9c0-2.6,0-5.3,0-7.9c10.7-1,21-5.1,32.1-12.6c8.7,6,16.7,9.6,25.1,11.5  c2.3,0.5,4.7,0.8,6.9,1.1v14.3c0,1.1,0,2.2,0,3.3C82.1,47,82.1,51.3,81.9,55.6z M55,68.6c0.1,2.7-2.3,5-5,5c-2.8,0-5.1-2.3-5.1-5.1  s2.3-5.1,5.1-5.1C52.8,63.4,55.2,65.7,55,68.6z M54.7,30.5c0.3,0.8,0.5,1.6,0.5,2.5c-0.1,2.5-0.3,5.1-0.5,7.6  c-0.2,3.9-0.5,7.9-0.7,11.8c-0.1,1.3-0.1,2.4-0.1,3.7c-0.1,2.1-1.7,3.7-3.8,3.7s-3.7-1.5-3.8-3.6c-0.3-6.1-0.7-12.2-1-18.3  c-0.1-1.6-0.2-3.2-0.3-4.9c0-2.7,1.5-4.9,3.9-5.6C51.2,27,53.7,28.2,54.7,30.5z" fill="orange"/></svg>
+							<p><small><a href="https://www.drupal.org/project/svg_sanitizer">d.o/project/svg_sanitizer</a></small></p>
+				  </section>
+			  </section>
 				<section>
 					<h2>Accessibility</h2>
 					<h3>(for inline SVG)</h3>
@@ -336,7 +496,7 @@ background-image: url('data:image/svg+xml;utf8,
 						<li>Add <code>aria-labelledby</code> attribute</li>
 						<li>Apply an ARIA role attribute</li>
 			    </ul>
-					<pre><code class="hljs" data-trim>
+					<pre><code class="xml" data-trim>
 &lt;svg aria-labelledby="title desc" role="img"&gt;
 &lt;title&gt;Green rectangle&lt;/title&gt;
 &lt;desc&gt;A light green rectangle with rounded corners&lt;/desc&gt;
@@ -347,19 +507,21 @@ background-image: url('data:image/svg+xml;utf8,
 				<section>
 					<h2>Animation</h2>
 					<ul>
-					  <li>SMIL (deprecated in Chrome)</li>
+					  <li><a href="https://www.w3.org/TR/SMIL/">SMIL</a>*</li>
 						<li><a href="http://greensock.com/">GreenSock</a></li>
 						<li><a href="http://snapsvg.io/">Snap.svg</a></li>
 						<li><a href="http://velocityjs.org/">Velocity.js</a></li>
 						<li><a href="http://danielcwilson.com/tags/web-animations-api/">Web Animations API series</a> by Dan Wilson</li>
 					</ul>
+					<p><small>* 8/17/2016 Chrome suspended intent to deprecate<br/><a href="https://groups.google.com/a/chromium.org/d/msg/blink-dev/5o0yiO440LM/YGEJBsjUAwAJ">groups.google.com/a/chromium.org/d/msg/blink-dev/5o0yiO440LM/YGEJBsjUAwAJ</small></p>
 				</section>
 				<section>
-					<h2>Further Watching</h2>
+					<h2>Further watching</h2>
 				  <ul>
 				    <li><a href="https://events.drupal.org/barcelona2015/sessions/next-generation-graphics-svg">Next generation graphics: SVG</a> by David Corbacho (corbacho) - DrupalCon Barcelona</li>
 				    <li><a href="https://events.drupal.org/losangeles2015/sessions/many-flavors-svg">The Flavors of SVG</a> by John Ferris (pixelwhip) - DrupalCon Los Angeles</li>
 				    <li><a href="https://vimeo.com/166790778">SVG in Motion</a> by Sarah Soueidan - Render 2016</li>
+				    <li><a href="http://2016.cascadiafest.org/speakers/tyler-sticka/">SVG: So Very Good</a> by Tyler Sticka - CascadiaFest 2016</li>
 			    </ul>
 				</section>
 				<section>
@@ -371,7 +533,7 @@ background-image: url('data:image/svg+xml;utf8,
 			    </ul>
 				</section>
 				<section>
-					<h2>Further Reading</h2>
+					<h2>Further reading</h2>
 				  <ul>
 					  <li><a href="https://www.w3.org/Graphics/SVG/">W3C SVG Working Group</a></li>
 					  <li><a href="https://www.w3.org/TR/SVG11/">w3.org/TR/SVG11/</a></li>
@@ -384,7 +546,8 @@ background-image: url('data:image/svg+xml;utf8,
 				<section>
 					<h2>Even more stuff</h2>
 				  <ul>
-				    <li><a href="https://thenounproject.com">thenounproject.com</a></li>
+				    <li>SVG 2 new features<br/><a href="https://github.com/w3c/svgwg/wiki/SVG-2-new-features">github.com/w3c/svgwg/wiki/SVG-2-new-features</a></li>
+            <li><a href="https://thenounproject.com">thenounproject.com</a></li>
 				    <li><a href="https://icomoon.io/">icomoon.io</a></li>
 				    <li><a href="https://bl.ocks.org/">bl.ocks.org</a></li>
 			    </ul>
@@ -407,6 +570,8 @@ background-image: url('data:image/svg+xml;utf8,
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
+		    // Display controls in the bottom right corner
+		    controls: false,
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [

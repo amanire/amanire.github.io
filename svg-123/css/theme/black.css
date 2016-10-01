@@ -205,16 +205,18 @@ body {
  * LINKS
  *********************************************/
 .reveal a {
-  color: #42affa;
+  color: #4c8aff;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
   transition: color .15s ease; }
 
 .reveal a:hover {
-  color: #8dcffc;
+  color: #a5c4ff;
   text-shadow: none;
-  border: none; }
+  border: none;
+  text-decoration: underline;
+}
 
 .reveal .roll span:after {
   color: #fff;
@@ -295,7 +297,11 @@ body {
   border: 0 !important;
   box-shadow: none !important;
 }
-
+.mushroom__cap {
+  fill: green;
+  stroke: black;
+  stroke-width: 10;
+}
 .sprinkle-water .mushroom--png {
   transition: all 5s ease-in-out;
   transform: scale(20);
@@ -318,7 +324,27 @@ body {
 }
 
 .list-date {
-  color: #f00;
+  color: #ff1f26;
   font-weight: bold;
 }
 
+mark {
+  color: #fff;
+  background: #036;
+  padding: 4px important;
+}
+
+#title {
+  color: #f4fb27;
+  font-family: Phosphate;
+  font-size: 200px;
+  z-index: 1;
+  margin-bottom: .5em;
+}
+
+#subtitle {
+  position: absolute;
+  top: 36%;
+  left: 14%;
+  z-index: -1;
+}
