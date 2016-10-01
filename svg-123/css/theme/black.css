@@ -334,17 +334,8 @@ mark {
   padding: 4px important;
 }
 
-#title {
-  color: #f4fb27;
-  font-family: Phosphate;
-  font-size: 200px;
-  z-index: 1;
-  margin-bottom: .5em;
-}
-
 #subtitle {
-  position: absolute;
-  top: 36%;
-  left: 14%;
-  z-index: -1;
+  position: relative;
+  left: -2%;
+  margin: 0;
 }
