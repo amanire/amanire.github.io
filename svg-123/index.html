@@ -69,7 +69,7 @@
 					  <li class="fragment"><span class="list-date">2003</span> SVG 1.1 released</li>
             <li class="fragment"><span class="list-date">2004</span> Konqueror browser introduced SVG support</li>
             <li class="fragment"><span class="list-date">2008</span> SVG Tiny 1.2 released</li>
-            <li class="fragment"><span class="list-date">2010</span> Steve Jobs publishes <em>Thoughts on Flash</em></li>
+            <li class="fragment"><span class="list-date">2010</span> Steve Jobs publishes <em><a href="http://www.apple.com/hotnews/thoughts-on-flash/">Thoughts on Flash</a></em></li>
 					  <li class="fragment"><span class="list-date">2011</span> SVG support added to Internet Explorer (IE9)</li>
 					  <li class="fragment"><span class="list-date">2016</span> SVG 2.0 candidate recommendation</li>
 					</ul>
@@ -130,17 +130,18 @@
 &lt;svg xmlns="http://www.w3.org/2000/svg" <mark>viewBox="0 0 274 244"</mark>&gt;
 &lt;/svg&gt;
 						</code class="xml" ></pre>
-					<p><small><a href="https://sarasoueidan.com/blog/svg-coordinate-systems/">sarasoueidan.com/blog/svg-coordinate-systems</a></small></p>
-          <p class="fragment">Animating the viewBox<br/><small><a href="http://codepen.io/Mamboleoo/post/animating-the-viewbox">codepen.io/Mamboleoo/post/animating-the-viewbox</a></small></p>
-				</section>
-				<section data-transition="fade-in fade-out">
+					  <p><small><a href="https://sarasoueidan.com/blog/svg-coordinate-systems/">sarasoueidan.com/blog/svg-coordinate-systems</a></small></p>
+          <img class="fragment" alt="viewbox grid system" src="images/viewbox-grid.png" style="background:none;
+  border:0; box-shadow:none;"/>
+				  </section>
+				  <section data-transition="fade-in fade-out">
 						<h3>Presentation attributes</h3>
 						<pre><code class="xml" data-trim data-noescape>
 &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 274 244"
   <mark>width="274px" height="244px"</mark>&gt;
 &lt;/svg&gt;
-						</code></pre>
-					</section>
+            </code></pre>
+          </section>
 					<section data-transition="fade-in fade-out">
 						<h3>Shape Elements</h3>
 						<pre><code class="xml" data-trim data-noescape>
@@ -182,7 +183,7 @@ width="274px" height="244px"&gt;
 width="274px" height="244px"&gt;
   &lt;g&gt;
     &lt;path <mark>fill="#ED1F24" stroke="#000" stroke-width="10" stroke-miterlimit="10"</mark> d="M5,137C5,137,5,5,137,5s132,132,132,132H5z"/&gt;
-    &lt;rect <mark>fill="#FFF" stroke="#000"</mark> width="101.4" height="101.4"/&gt;
+    &lt;rect <mark>x="86.4" y="137" fill="#FFF" stroke="#000"</mark> width="101.4" height="101.4"/&gt;
     &lt;text <mark>x="60" y="96" text-anchor="middle" font-size="48"</mark>&gt;
       Russula
     &lt;text&gt;
@@ -197,7 +198,7 @@ width="274px" height="244px"&gt;
 width="274px" height="244px"&gt;
   &lt;g&gt;
     &lt;path <mark>fill="#ED1F24" stroke="#000" stroke-width="10" stroke-miterlimit="10"</mark> d="M5,137C5,137,5,5,137,5s132,132,132,132H5z"/&gt;
-    &lt;rect <mark>fill="#FFF" stroke="#000"</mark> width="101.4" height="101.4"/&gt;
+    &lt;rect <mark>x="86.4" y="137" fill="#FFF" stroke="#000"</mark> width="101.4" height="101.4"/&gt;
     &lt;text <mark>x="60" y="96" text-anchor="middle" font-size="48"</mark>&gt;
       Russula
     &lt;text&gt;
@@ -240,6 +241,34 @@ width="274px" height="244px"&gt;
 					</svg>
 					</section>
 				</section>
+
+        <section data-transition="fade-in fade-out">
+          <section>
+          <h3>Closer look at Viewbox</h3>
+            <pre><code class="xml" data-trim data-noescape>
+  &lt;svg viewBox="0 0 274 244"&gt;
+&lt;/svg&gt;
+            </code class="xml" ></pre>
+            <ul>
+              <li>min-x</li>
+              <li>min-y</li>
+              <li>width</li>
+              <li>height</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Animating the viewBox</h3>
+            <p><small><a href="http://codepen.io/Mamboleoo/post/animating-the-viewbox">codepen.io/Mamboleoo/post/animating-the-viewbox</a></small></p>
+          </section>
+          <section>
+            <h3>Viewbox aspect ratio</h3>
+            <pre><code class="xml" data-trim data-noescape>
+  &lt;svg viewBox="0 0 274 244" width="100%"&gt;
+&lt;/svg&gt;
+            </code></pre>
+            <p class="fragment">Demo of viewport, viewBox, & preserveAspectRatio<br/><small><a href="https://sarasoueidan.com/demos/interactive-svg-coordinate-system/index.html">sarasoueidan.com/demos/interactive-svg-coordinate-system/</a></small></p>
+          </section>
+        </section>
 				<section>
 					<section>
 						<h2>Creating SVG</h2>
@@ -263,13 +292,12 @@ width="274px" height="244px"&gt;
 					<section>
 					  <h3>Figma</h3>
 					  <p>Collaborative workflow like Google Docs.</p>
-					  <p><small>1.0.0 general public release</small></p>
 					  <p><small><a href="https://www.figma.com/">figma.com</a></small></p>
 					</section>
           <section>
             <h3>Omnigraffle</h3>
             <p>Mac OS only<br/>
-            Omnigraffle 7 introduces SVG imports</p>
+            Omnigraffle 7 introduced SVG imports</p>
             <p><small><a href="https://www.omnigroup.com/omnigraffle/preview/">omnigroup.com/omnigraffle/preview/</a></small></p>
           </section>
 				</section>
@@ -281,6 +309,8 @@ width="274px" height="244px"&gt;
 						<h3>SVGO</h3>
 						<p>Nodejs-based tool for optimizing SVG vector graphics files.<br/>
 						<a href="https://github.com/svg/svgo">github.com/svg/svgo</a></p>
+            <p class="fragment">Sketch SVGO Compressor plugin<br/>
+            <small><a href="https://github.com/BohemianCoding/svgo-compressor">github.com/BohemianCoding/svgo-compressor</a></small></p>
 					</section>
 					<section>
 						<h3>SVG OMG</h3>
@@ -475,16 +505,12 @@ width="274px" height="244px"&gt;
 					</section>
 					<section>
 						<h2>SVG image fields in Drupal 8</h2>
-						<p>Ability to upload SVG to image fields is coming to core*<br/> in Drupal <strike>8.2</strike> 8.3.<br/>
+						<p>Ability to upload SVG to image fields is coming to core*<br/> in Drupal <strike>8.2</strike> <strike>8.3</strike> 8.4?<br/>
 						<a href="https://www.drupal.org/node/2652138">d.o/node/2652138</a></p>
 						<p>* Requires ImageMagick toolkit</p>
 					</section>
 				</section>
 				<section>
-					<section>
-				    <blockquote>"The security aspect of cyber is very, very tough. And maybe it's hardly doable."</blockquote>
-				    <p><small>— Donald Trump</small></p>
-				  </section>
 					<section>
 					  <h2>Security</h2>
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125" height=50vh>
@@ -564,6 +590,7 @@ width="274px" height="244px"&gt;
             <li><a href="https://thenounproject.com">thenounproject.com</a></li>
 				    <li><a href="https://icomoon.io/">icomoon.io</a></li>
 				    <li><a href="https://bl.ocks.org/">bl.ocks.org</a></li>
+            <li><a href="https://css-tricks.com/websites-generate-svg-patterns/">CSS Tricks: Websites to Generate SVG Patterns</a></li>
 			    </ul>
 				</section>
 				<section>
@@ -572,7 +599,7 @@ width="274px" height="244px"&gt;
 					<p>Aaron Manire</p>
 					<p><small><a href="https://twitter.com/amanire">@amanire</a></small><br/>
 					<small><a href="https://www.drupal.org/u/amanire">d.o/u/amanire</a></small></p>
-					<a href="https://isovera.com"><img style="border:0; background:none; height:50px;" src="images/isovera.svg"></a>
+					<a href="https://isovera.com"><img style="border:0; background:none; height:50px;" src="images/isovera-logo-reverse.svg"></a>
 				</section>
 			</div>
 		</div>
