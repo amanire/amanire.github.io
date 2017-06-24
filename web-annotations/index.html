@@ -1,0 +1,326 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Designing for Web Annotations</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700" rel="stylesheet">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Designing with Web Annotations</h1>
+					<p>Aaron Manire</p>
+          <p><small><a href="http://amanire.github.io/web-annotations">amanire.github.io/web-annotations</a></small></p>	
+					<a href="https://isovera.com"><img style="border:0; background:none; height:50px;" src="images/isovera_logo_reverse.svg"></a>
+					<aside class="notes">
+						Hybrid presentation, categorized it as a "case study". 
+					</aside>
+				</section>
+				<section>
+					<section>
+						<h2>Medium</h2>
+						<p><a href="https://medium.com">https://medium.com</a></p>
+					<aside class="notes">
+					  Who here is familiar with or has read a story on Medium.com?<br/><br/>
+					  published a story?<br/><br/>
+					 </aside>
+					</section>
+					<section data-background-image="images/medium-com.png" data-background-size="contain">
+					<aside class="notes">
+					  Publishing platform. Fancy blogging service.<br/><br/>
+						"world-class" content editor. Content curation.
+					</aside>
+					</section>
+					<section data-background-image="images/medium-highlight.png" data-background-size="contain">
+					<aside class="notes">
+						Not just for publishers, but tools that engage readers.<br/><br/>
+						Here, we see a highlighted paragraph.<br/><br/>
+						Top highlight shows that many readers have highlighted the same piece of text.
+					</aside>
+					</section>
+					<section data-background-image="images/medium-highlight-actions.png" data-background-size="contain">
+					</section>
+					<section data-background-image="images/medium-highlight-reply.png" data-background-size="contain">
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Genius</h2>
+						<h3>(formerly Rap Genius)</h3>
+						<p><a href="https://genius.com">https://genius.com</a></p>
+					<aside class="notes">
+					  Founded in 2009, over 2 million contributors.
+					</aside>
+					</section>
+					<section data-background-image="images/genius-com.png" data-background-size="contain">
+					</section>
+					<section data-background-image="images/genius-song.png" data-background-size="contain">
+					<aside class="notes">
+					  "ball on the beat", I get it!
+					</aside>
+					</section>
+					<section data-background-image="images/genius-song-annotated.png" data-background-size="contain">
+					</section>
+					<section data-background-image="images/genius-andreessen.png" data-background-size="contain">
+					<aside class="notes">
+					  Marc Andreessen and Eric Bina launched Mosaic browser in 1993, almost 25 years ago<br/><br/>
+					  Group annotation feature, but server was unwieldy
+					</section>
+					<section data-background-image="images/wired-sotu.png"  data-background-size="contain">
+					</section>
+					<section data-background-image="images/genius-sotu.png" data-background-size="contain">
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Hypothesis</h2>
+						<p><a href="https://hypothes.is">https://hypothes.is</a></p>
+					</section>
+					<section data-background-image="images/web-hypothes-is.png" data-background-size="contain">
+					</section>
+					<section data-background-image="images/web-hypothes-is-start.png" data-background-size="contain">
+					</section>
+					<section data-background-image="images/web-hypothes-is-plugin.png" data-background-size="contain">
+						<aside class="notes">
+							Chrome plug-in, currently, next is likely Firefox.<br/><br/>
+							Bookmarklet<br/><br/>
+							Via proxy server<br/><br/>
+							So now...
+						</aside>
+					</section>
+					<section data-background-image="images/no-comments.gif" data-background-size="contain">
+						<aside class="notes">
+							Patton Oswalt
+						</aside>
+					</section>
+					<section>
+						<h2>Quick Demo</h2>
+						<p><a href="https://hypothes.is/annotating-all-knowledge/">https://hypothes.is/annotating-all-knowledge/</a></p>
+					</section>
+					<section>
+						<h2>Highlight Markup</h2>
+<pre><code data-trim class="html">A 
+<hypothesis-highlight class="annotator-hl">
+  new open layer
+</hypothesis-highlight>
+is being created over all knowledge.
+</code></pre>
+					</section>
+					<section data-background-image="images/engadget.png" data-background-size="contain">
+						<aside class="notes">
+							Engadget's commenting policy<br/><br/>
+							Spam, trolls, abuse<br/><br/>
+							Commenter didn't bother to read the article.
+						</aside>
+					</section>
+					<section>
+						<h2>Hypothesis Groups</h2>
+						<img data-src="images/hypothesis-groups.png"/>
+						<aside class="notes">
+						And so returning back to Hypothesis, beginnings of annotation moderation features.
+						</aside>		
+					</section>
+					<section>
+						<h2>h web app</h2>
+						<p><a href="https://github.com/hypothesis/h">github.com/hypothesis/h</a></p>
+						<p><a href="http://h.readthedocs.io">http://h.readthedocs.io</a></p>
+						<aside class="notes">
+						h servest the Hypothesis web annotations API
+						</aside>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Science in the Classroom</h2>
+						<p><a href="http://scienceintheclassroom.org">http://scienceintheclassroom.org</a></p>
+						<aside class="notes">
+						Science in the Classroom is a collection of freely available annotated research papers from the Science family of journals.<br/><br/>
+						Isovera client for almost 5 years, launched major redesign last year.<br/><br/>
+						Goal: replace CKEditor plugin annotation system with Hypothesis annotations.
+						</aside>
+					</section>
+					<section data-background-image="images/sitc-homepage.png" data-background-size="contain">
+						<aside class="notes">
+						Responsive redesign, rebuild in Drupal 8
+						</aside>
+					</section>
+					<section data-background-image="images/sitc-paper.png" data-background-size="contain">					<aside class="notes">
+						Introduction<br/><br/>
+						Article tools
+						</aside>
+
+					</section>
+					<section data-background-image="images/sitc-paper-details.png" data-background-size="contain">
+					</section>
+					<section data-background-image="images/sitc-paper-highlighted.png" data-background-size="contain">
+					</section>
+					<section data-background-image="images/sitc-paper-annotated.png" data-background-size="contain">
+					</section>
+				</section>
+				<section>
+				  <section>
+						<h2>Learning Lens Module</h2>
+						<ul>
+							<li class="fragment">Configures variables</li>
+							<li class="fragment">Attaches Hypothesis annotations</li>
+							<li class="fragment">Modifies highlighting</li>
+							<li class="fragment">Adds legend block</li>
+							<li class="fragment">Generates modal popups</li>
+							<li class="fragment">Supports legacy annotations<br/>
+							<span class="fragment">(You don't want it)</span></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Configure variables</h2>
+						<ul>
+							<li class="fragment">Source Hypothesis account</li>
+							<li class="fragment">Canonical domain</li>
+							<li class="fragment">Associated content type(s)</li>
+							<li class="fragment">Taxonomy mapping (removed)</li>
+						</ul>
+					</section>
+					<section>
+						<img data-src="images/sitc-learning-lens-config.png"/>
+					</section>
+					<section>
+						<h2>Attach annotations</h2>
+						<p><a href="https://web.hypothes.is/tools-plug-ins-and-integrations/">web.hypothes.is/tools-plug-ins-and-integrations</a></p>
+						<p><a href="https://github.com/judell/StandaloneAnchoring">github.com/judell/StandaloneAnchoring</a></p>
+					</section>
+					<section>
+						<h2>Modify highlights</h2>
+						<img data-src="images/sitc-highlight.png"/>
+						<p>Using <code>mark</code> element</p>
+<pre><code data-trim class="html">
+<mark id="hypothesis-diS-7A5jEeeVAp9JlVp1Ew" data-hypothesis="{&quot;id&quot;:&quot;diS-7A5jEeeVAp9JlVp1Ew&quot;,&quot;user&quot;:&quot;beyondroots&quot;,&quot;exact&quot;:&quot;anthropocentric&quot;,&quot;text&quot;:&quot;Human-focused (as opposed to considering the entire ecosystem). &quot;,&quot;prefix&quot;:&quot;transform the anthropogenic and &quot;,&quot;tags&quot;:&quot;Glossary&quot;}">
+  anthropocentric
+</mark>
+</code></pre>
+					</section>
+					<section>
+						<h2>Modify highlights</h2>
+						<h3>Mark element data</h3>
+<pre><code data-trim class="html">
+<mark id='hypothesis-diS-7A5jEeeVAp9JlVp1Ew' data-hypothesis='{
+"id":"diS-7A5jEeeVAp9JlVp1Ew",
+"user":"beyondroots",
+"exact":"anthropocentric","
+text":"Human-focused (as opposed to considering the entire ecosystem). ","
+prefix":"transform the anthropogenic and ",
+"tags":"Glossary"}'>
+anthropocentric
+</mark>
+</code></pre>
+					</section>
+
+					<section>
+						<h2>Modify highlights</h2>
+						<h3>Apply Learning Lens style rules</h3>
+<pre><code class="html" data-noescape>&lt;mark id="hypothesis-diS-7A5jEeeVAp9JlVp1Ew" data-hypothesis="{&quot;id&quot;:&quot;diS-7A5jEeeVAp9JlVp1Ew&quot;,&quot;user&quot;:&quot;beyondroots&quot;,&quot;exact&quot;:&quot;anthropocentric&quot;,&quot;text&quot;:&quot;Human-focused (as opposed to considering the entire ecosystem). &quot;,&quot;prefix&quot;:&quot;transform the anthropogenic and &quot;,&quot;tags&quot;:&quot;Glossary&quot;}"
+ class="<mark>hypothesis_annotation llens-6</mark>"&gt;
+ anthropocentric
+&lt;/mark&gt;
+</code></pre>
+					</section>
+					<section>
+						<h2>Learning Lens Legend block</h2>
+						<img data-src="images/sitc-legend.png" style="height:50vh;"/>
+					</section>
+					<section>
+						<h2>Learning Lens Legend block</h2>
+						<p>Shows/hides highlighted text based on tag</p>
+<pre><code class="html" data-noescape>&lt;mark id="hypothesis-diS-7A5jEeeVAp9JlVp1Ew" data-hypothesis="{&quot;id&quot;:&quot;diS-7A5jEeeVAp9JlVp1Ew&quot;,&quot;user&quot;:&quot;beyondroots&quot;,&quot;exact&quot;:&quot;anthropocentric&quot;,&quot;text&quot;:&quot;Human-focused (as opposed to considering the entire ecosystem). &quot;,&quot;prefix&quot;:&quot;transform the anthropogenic and &quot;,&quot;tags&quot;:&quot;Glossary&quot;}"
+ class="hypothesis_annotation llens-6 <mark>show-annotation</mark>"&gt;
+ anthropocentric
+&lt;/mark&gt;
+</code></pre>
+					</section>
+					<section>
+						<h2>Modal popups</h2>
+						<img data-src="images/sitc-popup.png"/>
+						<p><a href="http://qtip2.com/">qtip2.com</a> jQuery plugin</p>
+						<aside class="notes">
+						QTip2 API modify popup title
+						</aside>
+					</section>
+					<section>
+						<blockquote>I absolutely love how the SitC team has gone out of their way to provide a resource that is authentic, and unchanged, but scaffolded and supported in ways that 9th-12th grade students can still benefit.<br/>
+						— <a href="http://www.edtechroundup.org/reviews/science-in-the-classroom-annotated-research-papers-and-accompanying-teaching-materials">The Ed Tech Round Up</a></blockquote>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>W3C Specification</h2>
+							<p>February 23, 2017</p>
+							<p>Three Recommendations to Enable<br/>Annotations on the Web</p>
+							<p><a href="https://www.w3.org/blog/news/archives/6156">w3.org/blog/news/archives/6156</a></p>
+						<aside class="notes">
+						Incentivizes browsers to incorporate web annotations natively.
+						</aside>
+					</section>
+					<section>
+						<h2>W3C Specification</h2>
+							<ul>
+								<li>Data Model</li>
+								<li>Vocabulary</li>
+								<li>Protocol</li>
+							</ul>
+						</section>
+						<section>
+							<h2>Web Annotation Data Model</h2>
+								<img data-src="images/intro_model.png"/>
+						</section>
+					<section>
+					<blockquote>
+						The W3C architecture provides for a model where annotations live separately from documents and are reunited and reanchored in real-time whenever the relevant document is present. The benefit of this is that <mark>annotations now come under the control and election of the user</mark>, rather than at the sole discretion of the publisher.<br/>
+						— <a href="https://web.hypothes.is/blog/annotation-is-now-a-web-standard/">Dan Whaley, founder/CEO of Hypothesis</a>
+						</blockquote>
+					</section>
+				</section>
+				<section>
+					<h2>Thank you</h2>
+					<p><a href="http://amanire.github.io/web-annotations">amanire.github.io/web-annotations</a></p>
+					<p>Aaron Manire</p>
+					<p><small><a href="https://twitter.com/amanire">@amanire</a></small><br/>
+					<small><a href="https://www.drupal.org/u/amanire">d.o/u/amanire</a></small></p>
+					<a href="https://isovera.com"><img style="border:0; background:none; height:50px;" src="images/isovera_logo_reverse.svg"></a>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
