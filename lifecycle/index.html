@@ -1,0 +1,372 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>A Lifecycle Approach to Configuration Workflows</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700" rel="stylesheet">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/isovera.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+<section>
+	<h2>A Lifecycle Approach to</h2>
+	<h1>Configuration Workflows</h1>
+	<p>Aaron Manire</p>
+	<p><small><a href="http://amanire.github.io/lifecycle">amanire.github.io/lifecycle</a></small></p>
+</section>
+ 
+<section>
+  <h2>About myself</h2>
+  <aside class="notes">
+    Been building sites with Drupal since 2007.
+    Got a job at a small company that build non-profit Drupal sites.
+    Developer at Isovera since 2011.
+  </aside>
+</section>
+
+<section data-markdown>
+    <textarea data-template>
+  ## Questions
+  - How many using features with version control?
+  - Not using/used features or config management? <!-- .element: class="fragment" -->
+  - How many use configuration management with version control? <!-- .element: class="fragment" -->
+  - How many use config split? <!-- .element: class="fragment" -->
+    </textarea>
+  </section>
+
+<section data-markdown data-separator-notes="^Notes:">
+  <textarea data-template>
+## A brief history of configuration management
+
+Notes:
+- Configuration Management: Tips, Tricks & Perspective by Zach Weishar.
+- Why is config management so useful? Allows reversion an while avoiding destruction of data w DB rollbacks.
+  </textarea>
+</section> 
+
+<section data-markdown>
+	<textarea data-template>
+## Drupal in 2011
+- Free (OK, not really) <!-- .element: class="fragment" -->
+- Active developer community <!-- .element: class="fragment" -->
+- Robust and flexible, e.g. user permissions and hooks <!-- .element: class="fragment" -->
+- Secure, reliable, scalable, performant <!-- .element: class="fragment" -->
+- UI to build features, lower barrier for site development <!-- .element: class="fragment" -->
+- Open Source: Portability - no vendor lockin <!-- .element: class="fragment" -->
+	</textarea>
+</section>
+
+<section data-markdown>
+	<textarea data-template>
+## Drupal in 2017
+- Free (OK, not really) ✓ <!-- .element: class="fragment" -->
+- Active developer community ✓ <!-- .element: class="fragment" -->
+- Robust and flexible, e.g. user permissions and hooks ✓✓ <!-- .element: class="fragment" -->
+- Secure, reliable, scalable, performant ✓✓✓✓✓ <!-- .element: class="fragment" -->
+- UI to build features, lower barrier for site development ✓ <!-- .element: class="fragment" -->
+	- but complicated ☹ <!-- .element: class="fragment" -->
+- Open Source: Portability - no vendor lockin ✓ <!-- .element: class="fragment" -->
+  - but complicated ☹ <!-- .element: class="fragment" -->
+	</textarea>
+</section>
+
+<section>
+  <h2>Competitive pressure</h2>
+  <section data-markdown>
+	<textarea data-template>
+  ### CMSs
+  - Wordpress
+  - Sitecore
+  - Adobe Experience Manager
+  </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+  ### Services
+  - Squarespace
+  - Wix
+  - Webflow
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+  ### New tools
+  - MEAN stack
+  - JAM stack
+    </textarea>
+  </section>
+</section>
+
+<section data-markdown data-separator-notes="^Notes:">
+  <textarea data-template>
+## Effect of competitive pressure
+### Increased market demand
+- Friendlier content authoring experience <!-- .element: class="fragment" -->
+- Better performance <!-- .element: class="fragment" -->
+- Reliability <!-- .element: class="fragment" -->
+- Security <!-- .element: class="fragment" -->
+- Audit trail <!-- .element: class="fragment" -->
+
+Notes:
+Media initative and Dries blogging about content authoring as area of emphasis.
+Success of paragraphs module.
+</textarea>
+</section>
+  
+<section data-markdown>
+  <textarea data-template>
+## Scale of Drupal sites
+- Single developer, low traffic <!-- .element: class="fragment" -->
+- 2-3 site builders and themer <!-- .element: class="fragment" -->
+  - medium traffic
+- Solution architect, multiple site builders, developers, themers, devops <!-- .element: class="fragment" -->
+  - high traffic
+- Enterprise <!-- .element: class="fragment" -->
+  - Formal operations
+  - high traffic
+  - high availability
+  </textarea>
+</section>
+  
+<section>
+  <h2>Enterprise best practices</h2>
+  <section data-background-image="images/enterprise.jpg">
+  </section>
+
+  <section data-markdown>
+    <textarea data-template>
+      ## Code workflow
+      <img src="images/dev-stage-prod-workflow.svg"/>
+    </textarea>
+  </section>
+
+  <section data-markdown>
+    <textarea data-template>
+      ### Database workflow
+      <img src="images/dev-stage-prod-db-workflow.svg"/>
+    </textarea>
+  </section>
+
+  <section data-markdown>
+    <textarea data-template>
+    - Automated testing
+    - Code review
+    - Dev site QA
+    - Staging site UAT
+    </textarea>
+  </section>
+
+  <section data-background-image="images/dcycle-manifesto.gif" data-background-size="contain">
+  </section>
+
+  <section data-markdown>
+    <textarea data-template>
+    ## Acquia Insight
+    Disable UI modules on production, e.g. Views and Fields
+    </textarea>
+  </section>
+
+  <section data-markdown>
+    <textarea data-template>
+    ### [Configuration Read-only mode](https://www.drupal.org/project/config_readonly) module
+    <img src="images/config-read-only-mode.png">
+    </textarea>
+  </section>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+## Enterprise ain't cheap
+  - Training/onboarding staff <!-- .element: class="fragment" -->
+  - Different companies have different workflows, platforms, expectations <!-- .element: class="fragment" -->
+  - Client leaves agency and config falls into neglect <!-- .element: class="fragment" -->
+  - Outdated tests <!-- .element: class="fragment" -->
+  - Extra work to deploy content dependencies <!-- .element: class="fragment" -->
+  - QA and review bottlenecks <!-- .element: class="fragment" -->
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+  ## Competing visions
+  ### Developers vs Site builders
+  - DrupalCon Denver 2012 <!-- .element: class="fragment" --> ["Arrays of Doom”](https://john.albin.net/drupal/arrays-of-doom)
+  - Drupal South 2016 <!-- .element: class="fragment" --> ["Does Drupal have an identity problem?"](https://www.previousnext.com.au/blog/presentation-16-years-of-age-does-drupal-have-identity-problem)
+  </textarea>
+</section>  
+
+<section>
+  <h3>Production paradox</h3>
+  <h4>Config management in version control</h4>
+  <p class="fragment">is even more valuable when changes are made directly on production site for the ability to rollback without losing data.</p>
+  <img style="height:50%; width:50%" class="fragment" src="images/backdrop-cms-logo.png"/>
+</section>
+
+<section data-background-image="images/baby-bucket.jpg" data-background-size="contain">
+</section>
+
+<section>
+  <h2>The Tricycle Manifesto</h2>
+  
+  <section data-markdown data-separator-notes="^Notes:" data-background-image="images/tricycle.jpg" data-background-size="contain">
+Notes: Humbly introduce…
+  </section>
+
+  <section data-markdown>
+    <textarea data-template>
+    <img src="images/tricycle.svg"/>
+    </textarea>
+  </section>
+
+  <section data-markdown>
+    <textarea data-template>
+### Prototyping phase
+- Rapid iteration
+  - Minimum Viable Product <!-- .element: class="fragment" -->
+  - Riskiest Assumption Test <!-- .element: class="fragment" -->
+- Use version control for dependencies <!-- .element: class="fragment" -->
+- Export configuration to version control for backup snapshots <!-- .element: class="fragment" -->
+- Database snapshots become critical <!-- .element: class="fragment" -->
+  - Isovera Tools drush script <!-- .element: class="fragment" -->
+    </textarea>
+  </section>
+
+  <section data-markdown>
+    <textarea data-template>
+  ### Build phase
+  - All configuration managed and distributed through version control <!-- .element: class="fragment" -->
+  - Database updates for non-configuration changes, e.g. content dependencies <!-- .element: class="fragment" -->
+  - Repeating and routine deployments <!-- .element: class="fragment" -->
+    </textarea>
+  </section>
+
+  <section data-markdown>
+    <textarea data-template>
+### Maintenance phase
+- One-off deployments via version control <!-- .element: class="fragment" -->
+- <!-- .element: class="fragment" --> Or could be omitted from version control with [Config Ignore](https://www.drupal.org/project/config_ignore) module 
+  - <!-- .element: class="fragment" --> [Features Tools](https://www.drupal.org/project/ftools/git-instructions) in Drupal 7
+- Directly on production then committed to version control <!-- .element: class="fragment" -->
+- <!-- .element: class="fragment" --> [Conditional split](https://www.drupal.org/docs/8/modules/configuration-split/conditional-split) (formerly graylisting)
+  - <!-- .element: class="fragment" --> but client prod work remains outside of version control.
+    </textarea>
+  </section>
+</section>
+
+<section data-background-color="#fff">
+  <h3>Phase and scale</h3>
+  <img src="images/tricycle-manifesto.svg"/>
+</section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+      <h3>Change configuration directly on production site?</h3>
+    </textarea>
+  </section>
+    
+  <section data-background-image="images/just-say-no.png" data-background-size="contain">
+    <aside class="notes">
+    Remember the "Config Read-only mode" module? That may be good for product teams or HA client projects.
+    I hope we it's not controversial to state that the drug war is a complete and utter failure. This draconian approach doesn't work.
+    </aside>
+  </section>
+
+  <section data-markdown>
+    <textarea data-template>
+        <h2>Just say…</h2>
+        <h3 class="fragment">Harm reduction leads to better outcomes than prohibition.</h3>
+    </textarea>
+    <aside class="notes">
+        Clients/stakeholders are going to always want a quick fix.
+        Only allow users with expert role and permissions.
+      </aside>
+  </section>
+</section>
+    
+<section data-background-image="images/cowboy.jpg" data-background-size="contain">
+  <aside class="notes">
+  Don't get me wrong…
+</aside>
+</section>
+
+<section>
+  <section data-background-image="images/gifts.jpg">
+    <h2>Wish List</h2>
+  </section>
+
+  <section data-markdown>
+    <textarea data-template>
+### Ways to reduce risk of changing configuration on production
+- Notify developers when change is made on production <!-- .element: class="fragment" -->
+- Block deployments to production when in an overridden state <!-- .element: class="fragment" -->
+- Commit changes to dedicated branch, review and redeploy <!-- .element: class="fragment" -->
+- Automatically create pull request when production configuration is changed <!-- .element: class="fragment" -->
+- Commit UI in Drupal for configuration changes <!-- .element: class="fragment" -->
+    </textarea>
+    <aside class="notes">
+        Partial flag mentioned in Zach's talk
+      </aside>
+  </section>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+## In summary
+- Drupal is a super powerful CMS <!-- .element: class="fragment" -->
+- Competitive advantage is changing <!-- .element: class="fragment" -->
+- Love configuration synchronization <!-- .element: class="fragment" -->
+- Know when to apply best practices <!-- .element: class="fragment" -->
+- Work with client site builders <!-- .element: class="fragment" -->
+- Key to a successful project is tailoring workflow to phase and scale <!-- .element: class="fragment" -->
+  </textarea>
+</section>
+
+<section>
+  <h2>Thank you</h2>
+  <p><a href="http://amanire.github.io/lifecycle">amanire.github.io/lifecycle</a></p>
+  <p>Aaron Manire</p>
+  <p><small><a href="https://twitter.com/amanire">@amanire</a></small><br/>
+  <small><a href="https://www.drupal.org/u/amanire">d.o/u/amanire</a></small></p>
+  <a href="https://isovera.com"><img style="border:0; background:none; height:50px;" src="images/isovera_logo_reverse.svg"></a>
+</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="497" height="202" viewBox="0 0 497 202" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <rect id="a" width="124" height="77" rx="8"/>
+    <rect id="b" width="124" height="77" rx="8"/>
+    <rect id="c" width="137" height="77" rx="8"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <use fill="#D3E1F1" xlink:href="#a"/>
+    <rect width="123" height="76" x=".5" y=".5" stroke="#000000" rx="8"/>
+    <text fill="#4A4A4A" font-family="SourceSansPro-Regular, Source Sans Pro" font-size="24">
+      <tspan x="43" y="44">Dev</tspan>
+    </text>
+    <g transform="translate(180)">
+      <use fill="#D3E1F1" xlink:href="#b"/>
+      <rect width="123" height="76" x=".5" y=".5" stroke="#000000" rx="8"/>
+      <text fill="#4A4A4A" font-family="SourceSansPro-Regular, Source Sans Pro" font-size="24">
+        <tspan x="24" y="44">Staging</tspan>
+      </text>
+    </g>
+    <g transform="translate(360)">
+      <use fill="#D3E1F1" xlink:href="#c"/>
+      <rect width="136" height="76" x=".5" y=".5" stroke="#000000" rx="8"/>
+      <text fill="#4A4A4A" font-family="SourceSansPro-Regular, Source Sans Pro" font-size="24">
+        <tspan x="11" y="44">Production</tspan>
+      </text>
+    </g>
+    <path stroke="#F8E81C" stroke-width="3" d="M124.5 38.5L175.135956 38.5M175.135956 38.5L164.335956 35.5 164.335956 41.5 175.135956 38.5zM63.1359556 112.5L63.1359556 81.5M63.1359556 81.5L60.1359556 92.3 66.1359556 92.3 63.1359556 81.5zM305.5 38.5L356.135956 38.5M356.135956 38.5L345.335956 35.5 345.335956 41.5 356.135956 38.5z" stroke-linecap="square"/>
+    <g transform="translate(18 113)">
+      <circle cx="44.5" cy="44.5" r="44.5" fill="#D3E1F0" stroke="#000000"/>
+      <text fill="#4A4A4A" font-family="SourceSansPro-Regular, Source Sans Pro" font-size="24">
+        <tspan x="18.048" y="50">Local</tspan>
+      </text>
+    </g>
+  </g>
+</svg>
