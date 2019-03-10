@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+  const fetchPromise = fetch('https://api.github.com/users/amanire');
+  console.log(fetchPromise);
+  fetchPromise
+  .then(response => {
+    console.log(response);
+    return response.json()
+  })
+  .then(data => {
+    console.log(data);
+  })
+  .catch(err => {
+    console.error(err);
+  })
+  </script>
+</body>
+</html>
