@@ -782,6 +782,10 @@ addEventListener('install', event => {
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); hljs.configure({tabReplace: '  '}) }}
 				]
 			});
+
+			if (navigator.serviceWorker && !navigator.serviceWorker.controller) {
+				navigator.serviceWorker.register('/serviceworker.js');
+			}
 		</script>
 	</body>
 </html>
