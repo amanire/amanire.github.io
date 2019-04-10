@@ -293,10 +293,20 @@ body {
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
 
-.attribution{
-  background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    font-size: 0.5em !important;
+.reveal .past .attribution,
+.reveal .future .attribution {
+  visibility: hidden;
+  opacity: 0;
 }
+.reveal .present .attribution {
+  visibility: visible;
+  opacity: 1;
+  transition: all 1s ease-in;
+  transition-delay: .8s; }
+.reveal .attribution {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-size: 0.5em !important; }
